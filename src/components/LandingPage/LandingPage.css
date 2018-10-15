@@ -1,0 +1,33 @@
+.landing-page {
+  height: 100vh;
+  background: #12c2e9;
+  background-image: linear-gradient(
+    to right top,
+    #00bf72,
+    #00b8c1,
+    #00a5ff,
+    #437fff,
+    #cc3eb6
+  );
+  display: flex;
+  color: #fff;
+}
+
+.centered {
+  /* align-self: center; */
+  /* justify-self: center; */
+  margin: auto;
+}
+
+.header {
+  font-size: 5rem;
+}
+
+.landing-page h1,
+.landing-page p {
+  margin: 1rem 0;
+}
+
+p {
+  line-height: 1.4rem;
+}

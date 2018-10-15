@@ -1,0 +1,39 @@
+.titlebar {
+  /* height: 10rem; */
+  height: 10rem;
+
+  background: #12c2e9;
+  background-image: linear-gradient(
+    to right top,
+    #00bf72,
+    #00b8c1,
+    #00a5ff,
+    #437fff,
+    #cc3eb6
+  );
+  margin: -3.1rem -1rem 1rem;
+  padding: 3.1rem 1rem 0;
+  color: #fff;
+}
+
+.titlebar + p {
+  /* color: #fff; */
+}
+
+.description {
+  flex-grow: 1;
+}
+
+/* a.button {
+  margin: auto 0;
+  align-self: flex-end;
+} */
+
+/* .content < .project {
+  flex-grow: 1;
+} */
+.project {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
