@@ -17,7 +17,7 @@ const spec = [
     component: SystemInfo
   },
   {
-    name: "Projects",
+    name: "Problems",
     location: "/projects",
     component: Projects,
     exact: true
@@ -39,7 +39,7 @@ const spec = [
     noPage: true
   },
   {
-    name: "Project",
+    name: "Problem",
     location: "/projects/:projectID",
     component: Project,
     external: false

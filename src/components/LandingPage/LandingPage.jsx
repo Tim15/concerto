@@ -4,7 +4,7 @@ import { Link, Route, BrowserRouter as Router } from "react-router-dom";
 
 import React from "react";
 
-export default function LandingPage({ title = "Hello", name = "concerto.ml" }) {
+export default function LandingPage({ title = "Hello", name = "Model Bench" }) {
   return (
     <div className="full landing-page spaced">
       <div className="centered">
