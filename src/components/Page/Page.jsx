@@ -1,14 +1,14 @@
 import Navbar from "../Navbar/Navbar";
 import React from "react";
 import Sidebar from "../Sidebar/Sidebar";
-import routes from "../../routes";
+import { spec } from "../../routes";
 
-export default function Page({ children }) {
+export default function Page({ children, name = "" }) {
   return (
     <div className="page split">
-      <Sidebar className="left" items={routes} />
+      <Sidebar className="left" items={spec} />
       <div className="main right">
-        <Navbar />
+        <Navbar title={name} />
 
         <div className="content">{children}</div>
       </div>

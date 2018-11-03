@@ -2,6 +2,7 @@ import "./SystemInfo.css";
 
 import React, { Component } from "react";
 
+import Loader from "../Loader/Loader";
 import Page from "../Page/Page";
 
 const si = window.require("systeminformation");
@@ -12,56 +13,18 @@ function capitalizeFirstLetter(string) {
 }
 
 export default class SystemInfo extends Component {
-  constructor() {
-    super();
-    this.state = { cpu: "", graphics: { controllers: "" }, memory: "" };
-    console.log("init");
-    console.log(si);
-
-    si.cpu()
-      .then(data => {
-        this.setState({ cpu: data });
-        console.log(data);
-      })
-      .catch(error => console.error(error));
-
-    si.graphics()
-      .then(data => {
-        this.setState({ graphics: data });
-        console.log(data);
-      })
-      .catch(error => console.error(error));
-
-    si.mem()
-      .then(data => {
-        this.setState({ memory: data });
-        console.log(data);
-      })
-      .catch(error => console.error(error));
-
-    si.osInfo()
-      .then(data => {
-        this.setState({ osInfo: data });
-        console.log(data);
-      })
-      .catch(error => console.error(error));
-
-    si.fsSize()
-      .then(data => {
-        this.setState({ fsSize: data });
-        console.log(data);
-      })
-      .catch(error => console.error(error));
-  }
   render() {
     let categories = [
-      { name: "CPU", data: [this.state.cpu] },
-      { name: "GPU", data: this.state.graphics.controllers },
-      { name: "Memory", data: [this.state.memory], transform: i => bytes(i) },
-      { name: "OS", data: [this.state.osInfo] },
+      { name: "CPU", data: [this.props.cpu] },
+      {
+        name: "GPU",
+        data: this.props.graphics && this.props.graphics.controllers
+      },
+      { name: "Memory", data: [this.props.mem], transform: i => bytes(i) },
+      { name: "OS", data: [this.props.osInfo] },
       {
         name: "Filesystem",
-        data: this.state.fsSize,
+        data: this.props.fsSize,
         transform: i => {
           if (typeof i == "number") {
             return bytes(i);
@@ -78,8 +41,6 @@ export default class SystemInfo extends Component {
         break;
       }
       for (let [idx, item] of cat.data.entries()) {
-        console.log(item);
-
         if (!item) {
           break;
         }
@@ -111,6 +72,15 @@ export default class SystemInfo extends Component {
         d = [];
       }
     }
-    return <Page>{c}</Page>;
+    return (
+      <div className="">
+        {!this.props.loaded && (
+          <div className="max ctrc">
+            <Loader className="" />
+          </div>
+        )}
+        <div className="sys-info">{this.props.loaded && c}</div>
+      </div>
+    );
   }
 }

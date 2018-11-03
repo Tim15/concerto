@@ -8,6 +8,7 @@
   padding-bottom: 1rem;
   /* position: fixed; */
   overflow: hidden;
+  /* position: sticky; */
 }
 
 .sidebar-item {

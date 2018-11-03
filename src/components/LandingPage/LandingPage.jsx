@@ -6,7 +6,7 @@ import React from "react";
 
 export default function LandingPage({ title = "Hello", name = "concerto.ml" }) {
   return (
-    <div className="landing-page">
+    <div className="full landing-page spaced">
       <div className="centered">
         <h1 className="header">{title}</h1>
         <p>

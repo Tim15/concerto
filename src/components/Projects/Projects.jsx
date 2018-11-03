@@ -37,10 +37,9 @@ export default function Projects() {
     );
   }
   return (
-    <Page>
-      <h1>Projects</h1>
+    <div>
       <div className="featured">{p}</div>
       <div className="new" />
-    </Page>
+    </div>
   );
 }

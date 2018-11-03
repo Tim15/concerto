@@ -1,5 +1,4 @@
 .landing-page {
-  height: 100vh;
   background: #12c2e9;
   background-image: linear-gradient(
     to right top,
@@ -9,8 +8,12 @@
     #437fff,
     #cc3eb6
   );
-  display: flex;
   color: #fff;
+}
+
+.full {
+  height: 100vh;
+  display: flex;
 }
 
 .centered {
@@ -23,8 +26,8 @@
   font-size: 5rem;
 }
 
-.landing-page h1,
-.landing-page p {
+.spaced h1,
+.spaced p {
   margin: 1rem 0;
 }
 
